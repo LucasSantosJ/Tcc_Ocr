@@ -11,14 +11,14 @@ if not chave_api:
 cliente = genai.Client(api_key=chave_api)
 
 def extrair_texto_gemini():
-    pasta_imagens = "data/processed"
+    pasta_imagens = "data/pages/0092"
     pasta_saida = "data/outputs/gemini"
     os.makedirs(pasta_saida, exist_ok=True)
 
     prompt = "Retorne apenas a Transcrição."
 
     for arquivo in os.listdir(pasta_imagens):
-        if not arquivo.lower().endswith(('.jpg', '.jpeg', '.png', '.tiff')):
+        if not arquivo.lower().endswith(('.png')):
             continue
 
         caminho_imagem = os.path.join(pasta_imagens, arquivo)
